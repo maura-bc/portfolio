@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">maura</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-shapes">
+      <svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg" class="shapes-svg">
+        <!-- Large soft circle -->
+        <circle cx="320" cy="200" r="160" fill="rgba(255,255,255,0.18)" />
+        <!-- Outlined circle -->
+        <circle cx="380" cy="340" r="90" fill="none" stroke="rgba(184,132,156,0.4)" stroke-width="1.5" />
+        <!-- Small filled circle -->
+        <circle cx="180" cy="420" r="40" fill="rgba(123,106,170,0.2)" />
+        <!-- Thin ring -->
+        <circle cx="260" cy="100" r="55" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" />
+        <!-- Rounded square rotated -->
+        <rect x="300" y="380" width="110" height="110" rx="12" fill="rgba(184,132,156,0.15)" transform="rotate(18 355 435)" />
+        <!-- Small dot cluster -->
+        <circle cx="150" cy="180" r="8" fill="rgba(123,106,170,0.3)" />
+        <circle cx="175" cy="200" r="5" fill="rgba(123,106,170,0.2)" />
+        <circle cx="155" cy="220" r="6" fill="rgba(184,132,156,0.25)" />
+        <!-- Diagonal line accent -->
+        <line x1="420" y1="80" x2="480" y2="200" stroke="rgba(255,255,255,0.25)" stroke-width="1" />
+        <line x1="440" y1="80" x2="500" y2="200" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+      </svg>
+    </div>
+    <div class="hero-inner">
+      <h1>Designing experiences <span>that work.</span></h1>
+      <p>Hi, I'm Maura — a UX/UI design student at Kennesaw State Univeristy in Atlanta, GA. I'm focused on research driven design, clear interfaces, and meaningful user experiences.</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container two-col">
+      <div class="about-img">
+        <div class="polaroid">
+  <img src="assets/maura-headshot.jpg" alt="Professional Headshot" />
+</div>
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>I'm a UX/UI design student based in Atlanta, GA with a strong foundation in user research, interaction design, and visual communication. I approach every project by understanding the problem first,  then designing solutions that are intuitive, accessible, and purposeful.</p>
+        <p>I'm currently seeking internship and junior design opportunities where I can contribute, grow, and collaborate with experienced teams.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <p class="section-label center">Projects</p>
+      <h2 class="center">Selected Work</h2>
+      <div class="card-grid">
+
+        <div class="card">
+          <div class="card-thumb" style="background:#f9e4ee;">
+            <img src="/assets/BILT-Home-Page.png" alt="BILT Promotional Website" />
+          </div>
+          <div class="card-body">
+            <h3>BILT Promotional Website Design</h3>
+            <p>A promotional website design for the BILT Credit Card</p>
+            <a href="https://www.figma.com/proto/wXwps6STZ5bed9gXga2lVU/BILT-Credit-Card-Promotional-Website?node-id=1-4&starting-point-node-id=1%3A4&t=QeEZfL0Bp3maje2d-1" target="_blank" class="card-link">View in Figma →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-thumb" style="background:#ede8f7;">
+            <img src="/assets/Travelfy-Home.png" alt="Travel Website Design" />
+          </div>
+          <div class="card-body">
+            <h3>Travel Website Design</h3>
+            <p>A design mockup for a travel agency</p>
+            <a href="https://www.figma.com/proto/BUnaqfhfazK8bj9XJCO91U/COPY---4200---Variables-2-Assignment--Community---Copy-?node-id=12005-196&t=IYZw9FqpJCyTz7pX-1&scaling=scale-down&content-scaling=fixed&page-id=12005%3A192&starting-point-node-id=12005%3A196&show-proto-sidebar=1" target="_blank" class="card-link">View in Figma →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-thumb" style="background:#fdeee6;">
+            <img src="assets/Recipe-Website.png" alt="Website Design for Recipe Website" />
+          </div>
+          <div class="card-body">
+            <h3>Recipe Website Design</h3>
+            <p>A full design for a mock recipe website. Desktop and mobile designs</p>
+            <a href="https://www.figma.com/design/aLrKkLLcnT18jK0TCs1FND/4200---Final-Project--Community-?node-id=14013-97&t=JYJN6vnekbRiIohX-1" target="_blank" class="card-link">View in Figma →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container center">
+      <p class="section-label">Skills</p>
+      <h2>What I work with</h2>
+      <div class="skills-grid">
+        <span class="skill">Figma</span>
+        <span class="skill">Prototyping</span>
+        <span class="skill">User Research</span>
+        <span class="skill">Wireframing</span>
+        <span class="skill">Design Systems</span>
+        <span class="skill">Usability Testing</span>
+        <span class="skill">Accessibility</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container center">
+      <p class="section-label">Contact</p>
+      <h2>Get in Touch</h2>
+      <p class="contact-sub">I'm currently open to internships and junior UX/UI roles. If you'd like to discuss a project or opportunity, I'd love to hear from you.</p>
+      <a href="mailto:your@email.com" class="btn">Say Hello</a>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/maura-bangngu-ba0709198/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Maura · UX/UI Designer</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
