@@ -217,6 +217,32 @@ nav.scrolled { box-shadow: var(--shadow); }
 }
 .btn:hover { background: var(--accent2); transform: translateY(-2px); }
 
+/* ── Hero buttons ── */
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-outline {
+  background: var(--accent2);
+  color: var(--white);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.btn-outline:hover {
+  background: #6657a0;
+}
+.btn-outline svg {
+  flex-shrink: 0;
+  transition: transform .2s ease;
+}
+.btn-outline:hover svg {
+  transform: translateY(3px);
+}
+
 /* ── Sections ── */
 section { padding: 80px 0; }
 
@@ -263,13 +289,14 @@ section { padding: 80px 0; }
   gap: 0;
   margin-top: 48px;
   border: 2px solid var(--text);
+  overflow: visible;
 }
 .card {
   display: flex;
   flex-direction: column;
   background: var(--white);
   overflow: hidden;
-  transition: background .2s;
+  transition: transform .25s ease, box-shadow .25s ease;
   border-right: 2px solid var(--text);
   position: relative;
   text-decoration: none;
@@ -277,7 +304,11 @@ section { padding: 80px 0; }
   cursor: pointer;
 }
 .card:last-child { border-right: none; }
-.card:hover { background: var(--lavender); }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+  z-index: 1;
+}
 .card-thumb {
   height: 180px;
   display: flex;
@@ -286,33 +317,197 @@ section { padding: 80px 0; }
   font-size: 3.5rem;
   border-bottom: 2px solid var(--text);
   overflow: hidden;
+  position: relative;
 }
+.card-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(123,106,170,0.18);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.card:hover .card-thumb::after { opacity: 1; }
 .card-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform .35s ease;
 }
-.card-body { padding: 24px 28px 32px; display: flex; flex-direction: column; flex: 1; }
+.card:hover .card-thumb img { transform: scale(1.04); }
+.card-body { padding: 24px 28px 0; display: flex; flex-direction: column; flex: 1; }
 .card-body h3 {
   font-family: 'DM Serif Display', serif;
   font-size: 1.3rem;
   margin-bottom: 10px;
   letter-spacing: -0.01em;
 }
-.card-body p { color: var(--muted); font-size: .9rem; margin-bottom: 20px; line-height: 1.7; flex: 1; }
-.card-link {
-  font-size: .75rem;
+.card-body p { color: var(--muted); font-size: .9rem; margin-bottom: 0; line-height: 1.7; flex: 1; }
+
+/* ── Card CTA strip ── */
+.card-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 28px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: .72rem;
   font-weight: 600;
-  letter-spacing: .08em;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 2px;
-  transition: color .2s;
+  color: var(--muted);
+  transition: color .2s, border-color .2s;
 }
-.card:hover .card-link { color: var(--accent2); }
+.card:hover .card-cta {
+  color: var(--accent2);
+  border-color: var(--accent2);
+}
+.card-cta-arrow {
+  transition: transform .2s ease;
+}
+.card:hover .card-cta-arrow { transform: translateX(5px); }
+
+/* ── Project Modal ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 21, 32, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal-panel {
+  background: var(--cream);
+  border: 2px solid var(--text);
+  max-width: 720px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(24px);
+  transition: transform .35s ease;
+}
+.modal-overlay.open .modal-panel {
+  transform: translateY(0);
+}
+.modal-close {
+  position: sticky;
+  top: 16px;
+  float: right;
+  margin: 16px 16px 0 0;
+  background: var(--text);
+  color: var(--white);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: .85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background .2s;
+  flex-shrink: 0;
+}
+.modal-close:hover { background: var(--accent2); }
+.modal-hero {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-bottom: 2px solid var(--text);
+}
+.modal-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.modal-content {
+  padding: 36px 48px 48px;
+}
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.modal-tag {
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid rgba(0,0,0,0.15);
+  padding: 5px 12px;
+  border-radius: 99px;
+}
+.modal-content h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin-bottom: 32px;
+}
+.modal-body { color: var(--text); }
+.modal-body h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 32px 0 10px;
+}
+.modal-body h4:first-child { margin-top: 0; }
+.modal-body p {
+  font-size: .97rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.modal-body p:last-of-type { margin-bottom: 0; }
+.modal-body ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 12px;
+}
+.modal-body ul li {
+  font-size: .97rem;
+  line-height: 1.8;
+  color: var(--muted);
+  padding-left: 18px;
+  position: relative;
+}
+.modal-body ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+.modal-divider {
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin: 32px 0;
+}
+.modal-figma-btn { margin-top: 36px; }
+
+@media (max-width: 600px) {
+  .modal-overlay { padding: 0; align-items: flex-end; }
+  .modal-panel { max-height: 92vh; border-left: none; border-right: none; border-bottom: none; }
+  .modal-content { padding: 24px 20px 40px; }
+  .modal-hero { height: 200px; }
+}
 
 /* ── Skills ── */
 #skills { background: var(--text); }

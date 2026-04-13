@@ -56,7 +56,13 @@
     <div class="hero-inner">
       <h1>Designing experiences <span>that work.</span></h1>
       <p>Hi, I'm Maura — a UX/UI design student at Kennesaw State Univeristy in Atlanta, GA. I'm focused on research driven design, clear interfaces, and meaningful user experiences.</p>
-      <a href="#projects" class="btn">View My Work</a>
+      <div class="hero-btns">
+        <a href="#projects" class="btn">View My Work</a>
+        <a href="assets/maura-resume.pdf" download class="btn btn-outline">
+          Resume
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -83,38 +89,47 @@
       <h2 class="center">Selected Work</h2>
       <div class="card-grid">
 
-        <a href="https://www.figma.com/proto/wXwps6STZ5bed9gXga2lVU/BILT-Credit-Card-Promotional-Website?node-id=1-4&starting-point-node-id=1%3A4&t=QeEZfL0Bp3maje2d-1" target="_blank" class="card">
+        <div class="card" onclick="openProject('bilt')">
           <div class="card-thumb" style="background:#f9e4ee;">
             <img src="/assets/BILT-Home-Page.png" alt="BILT Promotional Website" />
           </div>
           <div class="card-body">
             <h3>BILT Promotional Website Design</h3>
             <p>A promotional website design for the BILT Credit Card</p>
-            <span class="card-link">View in Figma →</span>
+            <div class="card-cta">
+              <span>View Project</span>
+              <span class="card-cta-arrow">→</span>
+            </div>
           </div>
-        </a>
+        </div>
 
-        <a href="https://www.figma.com/proto/BUnaqfhfazK8bj9XJCO91U/COPY---4200---Variables-2-Assignment--Community---Copy-?node-id=12005-196&t=IYZw9FqpJCyTz7pX-1&scaling=scale-down&content-scaling=fixed&page-id=12005%3A192&starting-point-node-id=12005%3A196&show-proto-sidebar=1" target="_blank" class="card">
+        <div class="card" onclick="openProject('travelfy')">
           <div class="card-thumb" style="background:#ede8f7;">
             <img src="/assets/Travelfy-Home.png" alt="Travel Website Design" />
           </div>
           <div class="card-body">
             <h3>Travel Website Design</h3>
             <p>A design mockup for a travel agency</p>
-            <span class="card-link">View in Figma →</span>
+            <div class="card-cta">
+              <span>View Project</span>
+              <span class="card-cta-arrow">→</span>
+            </div>
           </div>
-        </a>
+        </div>
 
-        <a href="https://www.figma.com/design/aLrKkLLcnT18jK0TCs1FND/4200---Final-Project--Community-?node-id=14013-97&t=JYJN6vnekbRiIohX-1" target="_blank" class="card">
+        <div class="card" onclick="openProject('recipe')">
           <div class="card-thumb" style="background:#fdeee6;">
             <img src="assets/Recipe-Website.png" alt="Website Design for Recipe Website" />
           </div>
           <div class="card-body">
             <h3>Recipe Website Design</h3>
             <p>A full design for a mock recipe website. Desktop and mobile designs</p>
-            <span class="card-link">View in Figma →</span>
+            <div class="card-cta">
+              <span>View Project</span>
+              <span class="card-cta-arrow">→</span>
+            </div>
           </div>
-        </a>
+        </div>
 
       </div>
     </div>
@@ -155,6 +170,22 @@
   <footer>
     <p>© 2026 Maura · UX/UI Designer</p>
   </footer>
+
+  <!-- PROJECT MODAL -->
+  <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-panel">
+      <button class="modal-close" aria-label="Close case study">✕</button>
+      <div class="modal-hero">
+        <img src="" alt="" id="modal-img" />
+      </div>
+      <div class="modal-content">
+        <div class="modal-tags" id="modal-tags"></div>
+        <h2 id="modal-title"></h2>
+        <div class="modal-body" id="modal-body"></div>
+        <a id="modal-figma-link" href="" target="_blank" class="btn modal-figma-btn">Open in Figma →</a>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
