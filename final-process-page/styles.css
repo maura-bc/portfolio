@@ -16,7 +16,7 @@ button:focus-visible {
 }
 
 .body-wrap {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 32px;
 }
@@ -31,7 +31,7 @@ section {
   background: #fff;
 }
 .hero {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 72px 32px 64px;
 }
@@ -41,12 +41,15 @@ section {
   line-height: 1.1;
   margin-bottom: 16px;
   color: #111;
+  text-align: center;
 }
 .hero-text p {
-  max-width: 680px;
+  max-width: 780px;
+  margin: 0 auto;
   color: #222;
   font-size: 19px;
   line-height: 1.55;
+  text-align: center;
 }
 .hero-img {
   margin-top: 36px;
@@ -66,7 +69,7 @@ section {
 /* Meta */
 .meta-wrap { border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; }
 .meta {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 16px 32px;
   display: flex;
@@ -96,7 +99,6 @@ section {
 }
 .section-sub { font-size: 20px; font-weight: bold; margin: 28px 0 10px; color: #111; }
 p.body {
-  max-width: 720px;
   color: #222;
   font-size: 18px;
   line-height: 1.6;
@@ -139,8 +141,12 @@ strong { color: #111; }
 
 /* Proposal */
 .proposal {
-  max-width: 360px;
-  margin: 22px 0 0;
+  display: block;
+  max-width: 480px;
+  margin: 28px auto 0;
+}
+.proposal:hover img {
+  opacity: 0.85;
 }
 .proposal img {
   width: 100%;
@@ -243,13 +249,14 @@ strong { color: #111; }
 .proto-screenshot img { width: 100%; display: block; }
 
 /* Prototype link */
-.proto-link { display: block; margin-top: 24px; }
+.proto-link { display: block; margin: 24px auto 0; max-width: 800px; }
 .proto-link:hover { opacity: 0.9; }
 
 /* Button */
 .view-btn {
-  display: inline-block;
-  margin-top: 18px;
+  display: block;
+  width: fit-content;
+  margin: 24px auto 0;
   color: #fff;
   background: #1a1a1a;
   border: 1px solid #1a1a1a;
@@ -258,6 +265,7 @@ strong { color: #111; }
   font-size: 15px;
   font-weight: bold;
   text-decoration: none;
+  text-align: center;
 }
 .view-btn:hover { background: #333; border-color: #333; }
 
