@@ -16,7 +16,7 @@ button:focus-visible {
 }
 
 .body-wrap {
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 32px;
 }
@@ -31,7 +31,7 @@ section {
   background: #fff;
 }
 .hero {
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 72px 32px 64px;
 }
@@ -44,7 +44,7 @@ section {
   text-align: center;
 }
 .hero-text p {
-  max-width: 780px;
+  max-width: 680px;
   margin: 0 auto;
   color: #222;
   font-size: 19px;
@@ -69,7 +69,7 @@ section {
 /* Meta */
 .meta-wrap { border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; }
 .meta {
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 16px 32px;
   display: flex;
@@ -145,9 +145,6 @@ strong { color: #111; }
   max-width: 480px;
   margin: 28px auto 0;
 }
-.proposal:hover img {
-  opacity: 0.85;
-}
 .proposal img {
   width: 100%;
   background: #fff;
@@ -155,6 +152,9 @@ strong { color: #111; }
   border-radius: 8px;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
   display: block;
+}
+.proposal:hover img {
+  opacity: 0.85;
 }
 
 /* Concepts */
