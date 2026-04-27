@@ -301,7 +301,7 @@ section { padding: 80px 0; }
   position: relative;
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
+  cursor: default;
 }
 .card:last-child { border-right: none; }
 .card:hover {
@@ -368,6 +368,45 @@ section { padding: 80px 0; }
   transition: transform .2s ease;
 }
 .card:hover .card-cta-arrow { transform: translateX(5px); }
+.card-actions {
+  display: grid;
+  gap: 10px;
+  padding: 18px 0 24px;
+}
+.card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1.5px solid var(--text);
+  background: var(--text);
+  color: var(--white);
+  font-family: inherit;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.card-action:hover,
+.card-action:focus-visible {
+  background: var(--accent2);
+  border-color: var(--accent2);
+  color: var(--white);
+}
+.card-action-outline {
+  background: transparent;
+  color: var(--text);
+}
+.card-action-outline:hover,
+.card-action-outline:focus-visible {
+  background: var(--cream);
+  border-color: var(--accent2);
+  color: var(--accent2);
+}
 
 /* ── Project Modal ── */
 .modal-overlay {
