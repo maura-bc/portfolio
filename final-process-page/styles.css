@@ -162,16 +162,18 @@ strong { color: #111; }
 /* Concepts */
 .concept {
   display: grid;
-  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
-  gap: 36px;
+  grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+  gap: 28px;
   align-items: start;
-  margin-bottom: 64px;
+  margin-bottom: 28px;
 }
+.section-title + .concept { margin-top: 32px; }
 .concept:last-child { margin-bottom: 0; }
 .concept-left {
+  align-self: center;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 18px;
 }
 .concept-name {
   color: #1C539B;
@@ -188,7 +190,7 @@ strong { color: #111; }
 .concept-desc {
   color: #222;
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
 /* Screenshot tinted container */
@@ -196,7 +198,7 @@ strong { color: #111; }
   background: #111;
   border: 2px solid #333;
   border-radius: 12px;
-  padding: 36px;
+  padding: 28px;
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.18);
 }
 
