@@ -216,7 +216,7 @@ a:focus-visible, button:focus-visible {
   .container { padding: 0 20px; }
   .section { padding: 64px 0; }
   .intro-split { grid-template-columns: 1fr; gap: 36px; }
-  .intro-phone { display: none; }
+  .intro-phone { display: flex; justify-content: center; }
   .page-title { font-size: 40px; }
   .section-title { font-size: 30px; }
   .pull-quote { font-size: 19px; }
