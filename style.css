@@ -285,7 +285,7 @@ section { padding: 80px 0; }
 #projects { background: var(--cream); }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 0;
   margin-top: 48px;
   border: 2px solid var(--text);
@@ -303,7 +303,8 @@ section { padding: 80px 0; }
   color: inherit;
   cursor: default;
 }
-.card:last-child { border-right: none; }
+.card:nth-child(2n) { border-right: none; }
+.card:nth-child(n+3) { border-top: 2px solid var(--text); }
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 16px 48px rgba(0,0,0,0.12);
@@ -618,8 +619,6 @@ footer {
   .two-col { grid-template-columns: 1fr; gap: 40px; }
   .polaroid { width: 100%; max-width: 320px; margin: 0 auto; }
   .card-grid { grid-template-columns: 1fr 1fr; }
-  .card:nth-child(2) { border-right: none; }
-  .card:nth-child(n+3) { border-top: 2px solid var(--text); }
 }
 
 /* ── Mobile ── */
